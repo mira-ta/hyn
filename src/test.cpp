@@ -6,15 +6,13 @@
 #include <iomanip>
 #include <iostream>
 
-#define loop while (1)
-
 int main(int argc, char *argv[]) {
     gnu::unix_time new_year_time = gnu::time() + gnu::unix_time(3);
 
     std::cout << std::setfill('0') << "Between now and the happy new year..." << std::endl;
     std::cout.flush();
 
-    loop {
+    while (1) {
         gnu::unix_time delta_time = new_year_time - gnu::time();
 
         gnu::tm_t *pretty_time = delta_time.absolute_time();
